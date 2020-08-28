@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const IconTile = function IconTile({ data }) {
   return (
@@ -12,6 +12,9 @@ const IconTile = function IconTile({ data }) {
       </section>
     </section>
   );
+};
+IconTile.PropTypes = {
+  data: PropTypes.object,
 };
 
 export default IconTile;
