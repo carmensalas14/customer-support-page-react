@@ -29,8 +29,8 @@ function App() {
             <main>
               {/* FAQ Grid (page-design-grid) */}
               <section className="cs-grid-section">
-                {iconTileData.map((data) => (
-                  <IconTile data={data} />
+                {iconTileData.map((data, index) => (
+                  <IconTile data={data} key={index} />
                 ))}
               </section>
 
@@ -53,8 +53,8 @@ function App() {
                 </section>
 
                 {/* FAQ Panels */}
-                {faqData.map((data) => (
-                  <CollapsePanel data={data} />
+                {faqData.map((data, index) => (
+                  <CollapsePanel data={data} key={index} />
                 ))}
               </section>
             </main>
