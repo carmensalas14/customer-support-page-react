@@ -1,38 +1,195 @@
-.App {
+/* font family imported from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* customer service header */
+.cs-header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* navigation */
+nav {
+  margin-left: 3%;
+}
+.nav-link {
+  font-size: 15px;
+  color: #296bce;
+  padding: 0 0.2% 0 0.2%;
+}
+.current-page {
+  color: #757575;
+}
+.primary-title {
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.primary-heading {
+  font-size: 30px;
+  margin: 10px;
+}
+.primary-subheading {
+  font-weight: 500;
+  font-size: 16px;
+  color: #757575;
+  margin-bottom: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* customer service grid */
+.cs-grid-section {
+  margin: 15px 0 30px 0;
+}
+.tile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tile-icon {
+  margin: 0 10px 0 10px;
+}
+
+.tile-icon img {
+  height: 70px;
+}
+
+.primary-highlight {
+  color: #115ed3;
+  margin: 0;
+}
+
+.primary-body {
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* FAQ first section */
+.faq-sec-2 {
+  margin: 10px 0 5% 0;
+}
+.secondary-heading {
+  margin: 0;
+  font-size: 25px;
+}
+.faq-nav {
+  width: 100px;
+}
+
+/* FAQ panels */
+.faq-section {
+  padding: 5% 2% 0 5%;
+  background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-grow: 1;
+}
+.q-panel {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  border-top: 2px solid #d1d1d1;
 }
 
-.App-link {
-  color: #61dafb;
+.panel-expand {
+  margin: 1% 15px 1% 15px;
+  border-top: 0.7px solid #d1d1d1;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+.panel-collpase {
+  display: none;
+  padding: 1% 0 1% 0;
+  margin: 0 15px 0 15px;
+  border-top: 0.7px solid #d1d1d1;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.a-panel-hide {
+  display: none;
+  margin: 0 0 1% 7%;
+}
+.a-panel-show {
+  margin: 0 0 1% 7%;
+}
+
+.secondary-highlight {
+  margin: 0;
+  padding: 1% 0 1% 0;
+  color: #115ed3;
+  font-weight: 500;
+}
+
+/* first breakpoint */
+@media (min-width: 640px) {
+  .cs-header {
+    padding: 0 10% 0 10%;
   }
-  to {
-    transform: rotate(360deg);
+  .faq-section {
+    padding: 5% 5% 0 5%;
+  }
+  .cs-grid-section {
+    padding: 0 5% 0 5%;
+  }
+  .faq-sec-2 {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* second breakpoint - grid change */
+@media (min-width: 768px) {
+  .cs-header {
+    padding: 0 15% 0 15%;
+  }
+
+  .cs-grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .tile {
+    width: 350px;
+  }
+  .primary-highlight {
+    color: #115ed3;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .primary-body {
+    margin: 0;
+    font-size: 14px;
+  }
+  .a-panel {
+    /* display: none; */
+    margin: 0 0 0 5%;
+  }
+}
+
+/* third break point */
+@media (min-width: 1024px) {
+  .cs-header {
+    padding: 0 28% 0 28%;
+  }
+
+  .cs-grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/* fourth breakpoint */
+@media (min-width: 1250px) {
+  .cs-grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
