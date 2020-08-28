@@ -1,18 +1,17 @@
-import React, { useState, PropTypes } from 'react';
+import React, { useState } from 'react';
 
 const CollapsePanel = function CollapsePanel({ data }) {
   const [panelShow, setPanelShow] = useState(false);
   return (
     <section>
       <section
-        key={index}
         className="q-panel"
         role="button"
         onClick={() => setPanelShow(!panelShow)}
       >
-        <div role="img" className="panel-expand">
+        <button role="button" className="panel-expand">
           {panelShow ? '-' : '+'}
-        </div>
+        </button>
 
         <p className="secondary-highlight">{data.question}</p>
       </section>
@@ -22,11 +21,6 @@ const CollapsePanel = function CollapsePanel({ data }) {
       </section>
     </section>
   );
-};
-
-CollapsePanel.propTypes = {
-  data: PropTypes.object,
-  onClickOut: PropTypes.func,
 };
 
 export default CollapsePanel;
