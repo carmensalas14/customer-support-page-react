@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NavLink = function NavLink() {
-  let location = window.location;
+  const { location } = window;
 
   return (
     <section>
