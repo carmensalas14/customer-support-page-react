@@ -3,9 +3,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.css';
-import iconTileData from './data/data';
+import iconTileData from './data/gridData';
+import faqData from './data/faqData';
 import Navigation from './components/Navigation/Navigation';
 import IconTile from './components/IconTile/IconTile';
+import CollapsePanel from './components/CollapsePanel/CollapsePanel';
 
 function App() {
   return (
@@ -27,9 +29,9 @@ function App() {
             <main>
               {/* FAQ Grid (page-design-grid) */}
               <section className="cs-grid-section">
-                {iconTileData.map((tile) => {
-                  return <IconTile data={tile} />;
-                })}
+                {iconTileData.map((data) => (
+                  <IconTile data={data} />
+                ))}
               </section>
 
               {/* FAQ title, heading, and FAQ full page link */}
@@ -49,12 +51,15 @@ function App() {
                     </a>
                   </nav>
                 </section>
-              </section>
 
-              {/* FAQ title, heading */}
+                {/* FAQ Panels */}
+                {faqData.map((data) => (
+                  <CollapsePanel data={data} />
+                ))}
+              </section>
             </main>
           </Route>
-          <Route path="/home"></Route>
+          <Route path="/home" />
         </Switch>
       </section>
     </Router>
